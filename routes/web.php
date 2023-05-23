@@ -19,6 +19,9 @@ Route::prefix('contacts')->group(function(){
     Route::get('/', [ContactsController::class,'index'])->name('contacts-index');
     Route::get('/create', [ContactsController::class,'create'])->name('contacts-create');
     Route::post('/', [ContactsController::class,'store'])->name('contacts-store');
+    Route::get('/{id}/edit', [ContactsController::class,'edit'])->where('id','[0-9]+')->name('contacts-edit');
+    Route::put('/{id}', [ContactsController::class,'update'])->where('id','[0-9]+')->name('contacts-update');
+    Route::delete('/{id}', [ContactsController::class,'destroy'])->where('id','[0-9]+')->name('contacts-destroy');
 });
 
 

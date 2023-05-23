@@ -25,8 +25,14 @@
                     <td>{{$contact->name}}</td>
                     <td>{{$contact->email}}</td>
                     <td>{{$contact->contact}}</td>
-                    <td><button type="button" class="btn btn-outline-primary">Edit</button></td>
-                    <td><button type="button" class="btn btn-outline-danger">Delete</button></td>
+                    <td><a href="{{route('contacts-edit',['id'=>$contact->id])}}" type="button" class="btn btn-outline-primary">Edit</a></td>
+                    <td>
+                        <form action="{{route('contacts-destroy',['id'=>$contact->id])}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
