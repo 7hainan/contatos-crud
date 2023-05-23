@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactPostRequest;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ContactsController extends Controller
 {
@@ -35,9 +37,13 @@ class ContactsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactPostRequest $request)
     {
-        //
+
+        Contact::create($request->all());
+        return redirect()
+        ->route('contacts-index')
+        ->with('success', 'contact successfully added!');
     }
 
     /**
