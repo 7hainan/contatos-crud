@@ -24,8 +24,6 @@ class ContactPutRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'contact' => 'required',
             'email' => 'email|unique:contacts'
         ];
     }

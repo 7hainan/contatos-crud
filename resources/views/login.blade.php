@@ -1,4 +1,4 @@
-@extends('layout',['title'=>'Edit Contact'])
+@extends('layout',['title'=>'Login'])
 
 @section('content')
 <div class="container" >
