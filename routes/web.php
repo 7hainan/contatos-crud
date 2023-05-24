@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\EditContactController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', [ContactsController::class,'index'])->name('contacts-index');
+
+Route::get('/login', function(){
+    return view('login');
+})->name('login');
+
+Route::post('/auth', [UserController::class,'auth'])->name('auth-user');
+Route::get('/logout', [UserController::class,'logout'])->name('logout-user');
 
 Route::prefix('contacts')->group(function(){
     Route::get('/', [ContactsController::class,'index'])->name('contacts-index');

@@ -30,7 +30,7 @@
             <input type="text" class="form-control" id="email" name="email" placeholder="email@example.com">
         </div>
         <div class="mb-3">
-            <label for="contact" class="form-label">Contato</label>
+            <label for="contact" class="form-label">Contact</label>
             <input type="text" class="form-control" id="contact" name="contact" placeholder="Type a contact number">
         </div>
         <button type="submit" class="btn btn-primary">Save</button>

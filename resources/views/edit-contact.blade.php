@@ -30,10 +30,12 @@
             <input type="text" class="form-control" id="email" name="email"  value="{{$contacts->email}}">
         </div>
         <div class="mb-3">
-            <label for="contact" class="form-label">Contato</label>
+            <label for="contact" class="form-label">Contact</label>
             <input type="text" class="form-control" id="contact" name="contact"  value="{{$contacts->contact}}">
         </div>
+        <div class="mb-3">
         <button type="submit" class="btn btn-primary">Save</button>
+        </div>
         </form>
     </div>
 @endsection
